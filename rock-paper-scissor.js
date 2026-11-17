@@ -99,7 +99,7 @@ function playGame(playerMove) {
 
     updateScoreElement();
 
-    const playerMoveImage = playerMove === 'scissor' ? 'scissors' : playerMove;
+    const playerMoveImage = playerMove.toLowerCase() === 'scissor' ? 'scissors' : playerMove;
 
     document.querySelector('.js-result').innerHTML = result;
 
