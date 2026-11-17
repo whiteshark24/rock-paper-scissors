@@ -27,9 +27,11 @@ function autoPlay() {
             playGame(playerMove);
         }, 1000);
         isIntervalPlaying = true;
+        document.querySelector('.js-auto-play-button').innerHTML = 'Stop Auto Play';
     } else {
         clearInterval(intervalId);
         isIntervalPlaying = false;
+        document.querySelector('.js-auto-play-button').innerHTML = 'Auto Play';
     }
 }
 
@@ -99,7 +101,7 @@ function playGame(playerMove) {
 
     updateScoreElement();
 
-    const playerMoveImage = playerMove.toLowerCase() === 'scissor' ? 'scissors' : playerMove;
+    const playerMoveImage = normalizedPlayerMove.toLowerCase() === 'scissor' ? 'scissors' : normalizedPlayerMove;
 
     document.querySelector('.js-result').innerHTML = result;
 
