@@ -78,15 +78,23 @@ function playGame(playerMove) {
 
     let result = '';
 
-    const normalizedPlayerMove = playerMove.toLowerCase();
+    const normalizedPlayerMove = playerMove.toLowerCase() === 'scissor' ? 'scissors' : playerMove.toLowerCase();
     const normalizedComputerMove = computerMove.toLowerCase();
 
-    if (normalizedComputerMove === 'rock') {
-        result = normalizedPlayerMove === 'paper' ? 'You win.' : playerMove === 'scissors' ? 'You lose.' : 'Tie.';
-    } else if (normalizedComputerMove === 'paper') {
-        result = normalizedPlayerMove === 'scissors' ? 'You win.' : playerMove === 'rock' ? 'You lose.' : 'Tie.';
-    } else if (normalizedComputerMove === 'scissors') {
-        result = normalizedPlayerMove === 'rock' ? 'You win.' : playerMove === 'paper' ? 'You lose.' : 'Tie.';
+    console.log("playerMove:", normalizedPlayerMove);
+    console.log("computerMove:", normalizedComputerMove);
+    console.log("score:", score);
+
+    if (normalizedPlayerMove === normalizedComputerMove) {
+        result = 'Tie.';
+    } else if (
+        (normalizedPlayerMove === 'rock' && normalizedComputerMove === 'scissors') ||
+        (normalizedPlayerMove === 'paper' && normalizedComputerMove === 'rock') ||
+        (normalizedPlayerMove === 'scissors' && normalizedComputerMove === 'paper')
+    ) {
+        result = 'You win.';
+    } else {
+        result = 'You lose.';
     }
 
     if (result === 'You win.') {
