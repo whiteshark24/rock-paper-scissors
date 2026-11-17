@@ -1,0 +1,145 @@
+/* General Reset */
+
+
+/* Center the game content */
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+/* Center the buttons and title vertically */
+
+.game-container {
+    text-align: center;
+}
+
+
+/* Add spacing between buttons */
+
+.move-button {
+    margin: 10px;
+}
+
+
+/* Title Styling */
+
+.tittle {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #4a90e2;
+}
+
+
+/* Button Container */
+
+button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    margin: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Move Buttons */
+
+.move-button {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.move-icon {
+    width: 80px;
+    height: 80px;
+}
+
+
+/* Result Section */
+
+.js-result {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #4caf50;
+}
+
+.js-moves {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.js-score {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #ff5722;
+}
+
+
+/* Reset and Auto Play Buttons */
+
+.reset-score-button,
+.auto-play-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4a90e2;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.reset-score-button:hover,
+.auto-play-button:hover {
+    background-color: #357ab8;
+    transform: scale(1.05);
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .move-icon {
+        width: 60px;
+        height: 60px;
+    }
+    .tittle {
+        font-size: 2rem;
+    }
+    .js-result,
+    .js-moves,
+    .js-score {
+        font-size: 1rem;
+    }
+    .reset-score-button,
+    .auto-play-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
